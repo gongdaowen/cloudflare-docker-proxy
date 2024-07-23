@@ -6,7 +6,7 @@ addEventListener("fetch", (event) => {
 const dockerHub = "https://registry-1.docker.io";
 
 const routes = {
-  "cloudflare-docker-proxy.gdw-guoke.workers.dev/": "https://registry-1.docker.io",
+  "${workername}.${username}.workers.dev/": "https://registry-1.docker.io",
 };
 // const routes = {
 //   // production
