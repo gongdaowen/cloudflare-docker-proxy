@@ -6,19 +6,22 @@ addEventListener("fetch", (event) => {
 const dockerHub = "https://registry-1.docker.io";
 
 const routes = {
-  // production
-  "docker.cccccc.com": dockerHub,
-  "quay.cccccc.com": "https://quay.io",
-  "gcr.cccccc.com": "https://gcr.io",
-  "k8s-gcr.cccccc.com": "https://k8s.gcr.io",
-  "k8s.cccccc.com": "https://registry.k8s.io",
-  "ghcr.cccccc.com": "https://ghcr.io",
-  "cloudsmith.cccccc.com": "https://docker.cloudsmith.io",
-  "ecr.cccccc.com": "https://public.ecr.aws",
-
-  // staging
-  "docker-staging.cccccc.com": dockerHub,
+  "${workername}.${username}.workers.dev/": "https://registry-1.docker.io",
 };
+// const routes = {
+//   // production
+//   "docker.cccccc.com": dockerHub,
+//   "quay.cccccc.com": "https://quay.io",
+//   "gcr.cccccc.com": "https://gcr.io",
+//   "k8s-gcr.cccccc.com": "https://k8s.gcr.io",
+//   "k8s.cccccc.com": "https://registry.k8s.io",
+//   "ghcr.cccccc.com": "https://ghcr.io",
+//   "cloudsmith.cccccc.com": "https://docker.cloudsmith.io",
+//   "ecr.cccccc.com": "https://public.ecr.aws",
+
+//   // staging
+//   "docker-staging.cccccc.com": dockerHub,
+// };
 
 function routeByHosts(host) {
   if (host in routes) {
